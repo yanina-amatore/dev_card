@@ -1,6 +1,6 @@
 import './App.css';
 
-const skillsList= ['HTML+CSS', 'JavaScript', 'Web Design', 'Git & Github', 'React', 'Svelte' ]
+// const skillsList= ['HTML+CSS', 'JavaScript', 'Web Design', 'Git & Github', 'React', 'Svelte' ]
 
 export default function App() {
   return (
@@ -10,7 +10,7 @@ export default function App() {
         <DeveloperInfo 
         name={"Jonas Schmedtmann"} 
         text= {'Full-stack web dveloper and teacher ay Udemy. When not coding or preparing a course, I lie to play board games, to cook (and eat), or to just enjoy the Portuguese sun at the beach.'}/>      
-        <SkillList skill={skillsList}/>
+        <SkillList />
       </body>
     </div>
   );
@@ -33,12 +33,24 @@ function DeveloperInfo(props){
   )
 }
 
-function SkillList(props){
- 
-
+function SkillList(){ 
   return(
     <div className='skill-list'>
-      <h1 className='skill'>{props.skill}</h1>
+      <Skill skill='HTML+CSS' color= 'red'/> 
+      <Skill skill='Web Design' color= 'orange'/>
+      <Skill skill='Git & Github' color= 'yellow'/>
+      <Skill skill='React'color= 'blue'/>
+      <Skill skill='Svelte'color= 'pink'/>
     </div>
   )
 }
+
+function Skill(props){ 
+
+  return(
+    <div className='skill' style={{backgroundColor: props.color}}>
+      <span >{props.skill}</span>
+    </div>
+  )
+}
+
