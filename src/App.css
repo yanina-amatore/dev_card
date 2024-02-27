@@ -29,7 +29,11 @@ h1 {
 .avatar {
   width: 100%;
   display: block;
-  object-fit: cover;
+ 
+}
+.avatar img {
+  object-fit: contain;
+  object-position: center;
 }
 
 .data {
